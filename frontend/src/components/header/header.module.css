@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.Navbar{
+    background-color: #e9e9e9;
+
+}
+
+.Navbar a{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+}
+
+.Navbar a:hover{
+    background-color: #ddd;
+}
+
+.Navbar a.active,a:active{
+    background-color: #2196f3;
+    color: white;
+}
