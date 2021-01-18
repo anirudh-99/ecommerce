@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Category = require("../models/category.model");
 const slugify = require("slugify");
-const catchAsync = require('../utils/catchAsync');
+const catchAsync = require("../utils/catchAsync");
 
 exports.addCategory = catchAsync(async (req, res, next) => {
   let category = {
@@ -9,6 +9,10 @@ exports.addCategory = catchAsync(async (req, res, next) => {
     slug: slugify(req.body.name),
     parentId: req.body.parentId,
   };
+
+  if (req.file) {
+    category.categoryImage = process.env.API_URL + "/public/" + req.file.filename;
+  }
 
   category = await Category.create({ ...category });
   res.status(201).json({

@@ -1,3 +1,5 @@
 backend/node_modules
 backend/plan.txt
+backend/uploads
+backend/.env
 frontend/node_modules
