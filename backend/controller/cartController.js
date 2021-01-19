@@ -9,7 +9,7 @@ exports.addToCart = catchAsync(async (req, res) => {
   console.log(cart);
   if (cart) {
     //if cart already exists for the user then update the cart
-
+    
     const itemIndex = cart.cartItems.findIndex(
       (item) => item.productId == productId
     );

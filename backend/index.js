@@ -15,6 +15,7 @@ const globalErrorHandler = require("./controller/errorController");
 
 //env varibale
 dotenv.config();
+app.use(cors());
 app.use(morgan());
 app.use(express.json());
 
@@ -32,8 +33,8 @@ mongoose
 app.use("/api/", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
-app.use('/api/cart',cartRoutes);
-app.use('/api/public',express.static(path.join(__dirname, 'uploads')))
+app.use("/api/cart", cartRoutes);
+app.use("/api/public", express.static(path.join(__dirname, "uploads")));
 
 app.use(globalErrorHandler);
 
